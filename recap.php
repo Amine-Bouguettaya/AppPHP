@@ -12,7 +12,7 @@
 <body>
     <header>
         <p>
-            <input type="button" name="recapPage" value="Acceuil" onClick="document.location.href='index.php'">
+            <input type="button" name="recapPage" value="Acceuil" class = "redirectButton" onClick="document.location.href='index.php'">
         </p>
     </header>
     <?php

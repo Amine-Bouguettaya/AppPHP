@@ -13,34 +13,28 @@
 <body>
     <header>
             <p>
-                <input type="button" name="recapPage" value="Récapitulatif" onClick="document.location.href='recap.php'">
+                <input type="button" name="recapPage" class="redirectButton" value="Récapitulatif" onClick="document.location.href='recap.php'">
             </p>
     </header>
-    <h1>Ajouter un produit</h1>
     <div id="content">
-    <form action="traitement.php" method="post">
-        <p>
-            <label>
-                Nom du Produit:
-                <input type="text" name="name">
-            </label>
-        </p>
-        <p>
-            <label>
-                Prix du Produit:
-                <input type="number" step="any" name="price">
-            </label>
-        </p>
-        <p>
-            <label>
-                Quantité désirée:
-                <input type="text" name="qtt" value = "1">
-            </label>
-        </p>
-        <p>
-            <input type="submit" name="submit" value="Ajouter le produit">
-        </p>
-    </form>
+        <form action="traitement.php" method="post" class="product-form">
+            <h2>Ajouter un Produit</h2>
+            <div class="form-group">
+                <label for="name">Nom du Produit:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="price">Prix du Produit:</label>
+                <input type="number" id="price" name="price" step="any" required>
+            </div>
+            <div class="form-group">
+                <label for="qtt">Quantité désirée:</label>
+                <input type="number" id="qtt" name="qtt" value="1" min="1" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" name="submit" value="Ajouter le produit" class="submitButton">
+            </div>
+        </form>
     </div>
     <?php
     echo "<br> <br>Il y a ".count($_SESSION['products'])." produit.";
