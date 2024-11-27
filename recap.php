@@ -43,11 +43,12 @@
                         "<td>".$product['qtt']."</td>",
                         "<td>".number_format($product['total'], 2, ",", "&nbsp;")."&nbsp;€</td>",
                         "<td>
-                            
+                            <input type='button' name='".$index."' value='Rétirer'>
                         </td>";
                 $totalGeneral += $product['total']; // addition du total de chaque produit pour calculer le total general
                 $countProduct += 1;
                 $countProductContent += $product['qtt'];
+                $_SESSION['count']=$countProductContent;
             }
             echo "<tr>",
                     "<td colspan=5>Total général : </td>", //affichage total general dans une celulle fuisionner grace a colspan
@@ -55,7 +56,7 @@
                 "</tr>", 
                 "</tbody>",
                 "</table>";
-            echo "<br> <br>Il y a ".$countProduct." produit diférent pour un total de ".$countProductContent." produit différent.";
+            echo "<br> <br>Il y a ".$countProduct." produit diférent pour un total de ".$_SESSION['count']." articles différent.";
         }
     ?>
 </body>

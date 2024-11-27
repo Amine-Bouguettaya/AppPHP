@@ -1,3 +1,7 @@
+<?php session_start();
+
+
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,5 +42,9 @@
         </p>
     </form>
     </div>
+    <?php
+    echo "<br> <br>Il y a ".count($_SESSION['products'])." produit.";
+    echo "<br>Il y a un total de ".$_SESSION['count']." articles différent.";
+    ?>
 </body>
 </html>
